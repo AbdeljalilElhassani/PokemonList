@@ -1,4 +1,3 @@
-// store.js
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
@@ -16,6 +15,11 @@ const reducer = (state = initialState, action) => {
             return { ...state, selectedGeneration: action.payload };
         case 'SET_POKEMON_LIST':
             return { ...state, pokemonList: action.payload };
+        case 'SET_GENERATION_DETAILS':
+            return {
+                ...state,
+                generationDetails: action.payload,
+            };
         default:
             return state;
     }
